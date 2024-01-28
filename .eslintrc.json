@@ -13,20 +13,39 @@
     },
     // Only apply eslint rules to src directory.
     "rules": {
-        "arrow-body-style": ["error", "always"],
-        "no-use-before-define": ["error", {
-            "functions": false,
-            "classes": true,
-            "variables": true,
-            "allowNamedExports": false
-        }],
+        "arrow-body-style": [
+            "error",
+            "always"
+        ],
+        "no-use-before-define": [
+            "error",
+            {
+                "functions": false,
+                "classes": true,
+                "variables": true,
+                "allowNamedExports": false
+            }
+        ],
         "import/no-extraneous-dependencies": [
             "error",
             {
-              "devDependencies": false,
-              "optionalDependencies": false,
-              "peerDependencies": false
+                "devDependencies": false,
+                "optionalDependencies": false,
+                "peerDependencies": false
             }
         ]
-    }
+    },
+    "overrides": [
+        {
+            "files": [
+                "tests/**/*"
+            ],
+            "plugins": [
+                "jest"
+            ],
+            "env": {
+                "jest/globals": true
+            }
+        }
+    ]
 }
